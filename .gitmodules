@@ -1,0 +1,3 @@
+[submodule "src/vue-v3-admin"]
+	path = src/vue-v3-admin
+	url = https://github.com/thruthesky/vue-v3-admin
