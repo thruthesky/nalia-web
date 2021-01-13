@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
 
 import Admin from "@/vue-v3-admin/Admin.vue";
-import AdminHome from "@/vue-v3-admin/view/AdminHome.vue";
+import AdminHome from "@/vue-v3-admin/views/AdminHome.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -56,55 +56,55 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: "users/:uid",
-        component: () => import("../fire-admin-vue/admin/Users.vue")
+        component: () => import("../vue-v3-admin/views/Users.vue")
       },
       {
         path: "categories",
         name: "Categories",
-        component: () => import("../fire-admin-vue/admin/Categories.vue")
+        component: () => import("../vue-v3-admin/views/Categories.vue")
       },
       {
         path: "posts/:category",
         name: "Posts",
-        component: () => import("../fire-admin-vue/admin/posts/Posts.vue")
+        component: () => import("../vue-v3-admin/views/Posts.vue")
       },
       {
         path: "search-posts",
         name: "SearchPosts",
-        component: () => import("../fire-admin-vue/admin/SearchPosts.vue")
+        component: () => import("../vue-v3-admin/views/SearchPosts.vue")
       },
       {
         path: "photos/:path",
         name: "Photos",
-        component: () => import("../fire-admin-vue/admin/Photos.vue")
+        component: () => import("../vue-v3-admin/views/Photos.vue")
       },
       {
         path: "settings",
         name: "Settings",
-        component: () => import("../fire-admin-vue/admin/settings/Settings.vue")
+        component: () => import("../vue-v3-admin/views/settings/Settings.vue")
       },
       {
         path: "settings/app",
         name: "AppSettings",
         component: () =>
-          import("../fire-admin-vue/admin/settings/AppSettings.vue")
+          import("../vue-v3-admin/views/settings/AppSettings.vue")
       },
       {
         path: "settings/forum/:category",
         name: "CategorySettings",
         component: () =>
-          import("../fire-admin-vue/admin/settings/CategorySettings.vue")
+          import("../vue-v3-admin/views/settings/CategorySettings.vue")
       },
       {
         path: "translations",
         name: "Translations",
-        component: () => import("../fire-admin-vue/admin/Translations.vue")
+        component: () => import("../vue-v3-admin/views/Translations.vue")
       },
       {
         path: "purchases",
         name: "Purchases",
         component: () =>
-          import("../fire-admin-vue/admin/purchases/Purchases.vue")
+          import("../vue-v3-admin/views/Purchases.vue")
       }
     ]
   }
