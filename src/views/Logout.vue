@@ -8,7 +8,8 @@
 import { Vue } from "vue-class-component";
 export default class Logout extends Vue {
   created() {
-    console.log("logout");
+    
+    
   }
 }
 </script>
