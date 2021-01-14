@@ -1,17 +1,18 @@
 import { createApp } from "vue";
-import App from "./App.vue";
+import AppView from "./AppView.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
+import { Api } from "./vue-v3-admin/services/api.service";
+import { App } from "./app.service";
 
-import { AppService } from "@/vue-v3-admin/services/app.service";
-/// Create AppService instance only one time.
-const appService = new AppService();
-createApp(App)
+Api.init();
+createApp(AppView)
   .mixin({
     data() {
       return {
-        app: appService /// Don't instantiate AppService() here.
+        api: Api,
+        app: App
       };
     }
   })

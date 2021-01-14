@@ -7,20 +7,26 @@
       >
         <div class="d-flex">
           <router-link class="logo" to="/">Nalia</router-link>
-          <!-- <router-link to="/register" v-if="app.notLoggedIn">회원가입</router-link> -->
-          <router-link to="/profile" v-if="app.user">Profile</router-link>
+          <!-- <router-link to="/register" v-if="api.notLoggedIn">회원가입</router-link> -->
+          <router-link to="/profile" v-if="api.user">Profile</router-link>
           <!-- <router-link to="/about">About</router-link> -->
         </div>
         <div class="d-flex">
           <router-link to="/private-policy">Privacy</router-link>
           <router-link to="/contacts">Contacts</router-link>
-          <router-link to="/admin" v-if="app.isAdmin">Admin</router-link>
-          <router-link to="/login" v-if="!app.loggedIn">Login</router-link>
-          <router-link to="/logout" v-if="app.loggedIn">Logout</router-link>
+          <router-link to="/admin" v-if="api.isAdmin">Admin</router-link>
+          <router-link to="/login" v-if="api.notLoggedIn">Login</router-link>
+          <router-link to="/register" v-if="api.notLoggedIn"
+            >Register</router-link
+          >
+          <router-link to="/profile" v-if="api.loggedIn">Profile</router-link>
+          <router-link to="/logout" v-if="api.loggedIn">Logout</router-link>
         </div>
       </header>
     </div>
     <main>
+      Loggin: {{ api.loggedIn }}, Name: {{ api.user?.user_email }}, count:
+      {{ api.store.count }}
       <router-view />
     </main>
   </section>
@@ -29,8 +35,7 @@
 <script lang="ts">
 import { Vue } from "vue-class-component";
 import router from "@/router";
-
-export default class RegisterForm extends Vue {
+export default class AppView extends Vue {
   currentRoute = "";
 
   created() {
@@ -116,4 +121,3 @@ input {
   background-color: blue;
 }
 </style>
-
