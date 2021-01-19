@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import RegisterForm from "@/vue-v3-admin/components/RegisterForm.vue"; // @ is an alias to /src
-import { ApiUser } from "@/vue-v3-admin/services/api.service";
+import { ApiUser } from "@/vue-v3-admin/services/api.interfaces";
 import { App } from "@/app.service";
 
 @Options({
